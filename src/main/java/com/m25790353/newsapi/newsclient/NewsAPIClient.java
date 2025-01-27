@@ -34,4 +34,16 @@ public class NewsAPIClient {
         }
 
     }
+
+  /**  RestClient customClient = RestClient.builder()
+            .requestFactory(new HttpComponentsClientHttpRequestFactory())
+            .messageConverters(converters -> converters.add(new MyCustomMessageConverter()))
+            .baseUrl("https://example.com")
+            .defaultUriVariables(Map.of("variable", "foo"))
+            .defaultHeader("My-Header", "Foo")
+            .defaultCookie("My-Cookie", "Bar")
+            .requestInterceptor(myCustomInterceptor)
+            .requestInitializer(myCustomInitializer)
+            .build();
+**/
 }

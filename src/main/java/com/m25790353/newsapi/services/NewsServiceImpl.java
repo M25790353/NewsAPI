@@ -11,16 +11,13 @@ public class NewsServiceImpl implements NewsService {
     public NewsServiceImpl(NewsAPIClient newsAPIClient) {
         this.newsAPIClient = newsAPIClient;
     }
-//    @Override
-//    public Article[] getArticles() {
-//        return new Article[0];
-//    }
+
 
     @Override
     public String getNews() {
 
         return   newsAPIClient.getTopHeadlines();
 
-        // return "testing 1234";
+
     }
 }
