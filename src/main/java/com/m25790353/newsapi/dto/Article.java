@@ -8,7 +8,7 @@ import lombok.Data;
 @Data
 public class Article {
 
-    private String source;
+    private Source source;
     private String author;
     private String title;
     private String description;
