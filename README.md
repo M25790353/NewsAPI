@@ -98,8 +98,9 @@ Where each articles may contain the following components
 | 27/01/25 | Creation of the project repository.  Started on the creation of <br/>the data types.                                                                    |
 | 28/01/25 | Continued with work on Controller, Service and data type, README file,                                                                                  |
 | 29/01/25 | Review of Streams, & Regex. More on README and refining existing code.                                                                                  |
-| 30/01/25 |                                                                                                                                                         |
-| 31/01/25 |                                                                                                                                                         |
+| 30/01/25 | Mongodb Udemy course                                                                                                                                    |
+| 31/01/25 | Mongodb Udemy course                                                                                                                                    |
+| 03/02/25 | Mongodb Udemy course                                                                                                                                    |
 
 
 ### Work TODO list: 

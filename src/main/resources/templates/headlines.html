@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Headlines Articles </title>
+</head>
+<body>
+
+<table>
+    <tr>
+        <th>Source</th>
+        <th>Title</th>
+        <th>Description</th>
+    </tr>
+    <tr th:each="article : ${articles}">
+        <td th:text="${article.source}">default</td>
+        <td th:text="${article.title}">abc</td>
+        <td th:text="${article.description}">abc</td>
+    </tr>
+</table>
+
+</body>
+</html>

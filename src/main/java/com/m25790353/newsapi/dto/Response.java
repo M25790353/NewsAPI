@@ -11,4 +11,11 @@ public class Response {
     private int totalResults;
     private Article[] articles;
 
+
+    //issue with Lombock?
+
+    public Article[] getArticles() {
+        return articles;
+    }
+
 }

@@ -1,13 +1,13 @@
 package com.m25790353.newsapi.services;
 
-import com.m25790353.newsapi.dto.EverythingRequest;
-import com.m25790353.newsapi.dto.Response;
-import com.m25790353.newsapi.dto.TopHeadlinesRequest;
+import com.m25790353.newsapi.dto.Article;
+
+import java.util.List;
 
 public interface NewsService {
 
-    // public Article[] getArticles();
+
+    public List<Article> geHeadlines();
 
 
-    public Response getNews();
 }

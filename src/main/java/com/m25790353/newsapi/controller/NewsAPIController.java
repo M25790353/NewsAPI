@@ -2,49 +2,37 @@ package com.m25790353.newsapi.controller;
 
 
 import com.m25790353.newsapi.dto.Article;
-import com.m25790353.newsapi.dto.EverythingRequest;
-import com.m25790353.newsapi.dto.Response;
-import com.m25790353.newsapi.dto.TopHeadlinesRequest;
 import com.m25790353.newsapi.services.NewsService;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
+import java.util.logging.Logger;
 
 @RestController
 public class NewsAPIController {
 
     private final NewsService newsService;
+    public static final Logger log = Logger.getLogger(NewsAPIController.class.getName());
 
     public NewsAPIController(NewsService newsService) {
         this.newsService = newsService;
     }
 
-    // https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=API_KEY
-    // GET https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=API_KEY
-    // GET https://newsapi.org/v2/top-headlines?q=trump&apiKey=API_KEY
-
     @GetMapping("/topheadlines")
-    public String getHeadlineNews() {
-        //first just work with a default query using top headlines
-        Response response =  newsService.getNews();
+    public String getHeadlineNews(Model model) {
 
-        Article[] articles = response.getArticles();
-        int numberOfArticles = articles.length;
+           List<Article> articles = newsService.geHeadlines();
+           for (Article article : articles) {
+                log.info(article.toString());
+                System.out.println(article.toString());
+           }
 
-        System.out.println("numberOfArticles: "  +numberOfArticles);
-        System.out.println("length of array: "  +articles.length);
+        model.addAttribute("article", articles);
+        return "headlines";
 
-        for (int i = 0; i < numberOfArticles; i++) {
-            System.out.println("******************** "  +i);
-            System.out.println("\n");
-            System.out.println(articles[i]);
-
-
-        }
-        System.out.println(response);
-        return response.getStatus();
     }
-
 
 }
