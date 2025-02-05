@@ -101,6 +101,8 @@ Where each articles may contain the following components
 | 30/01/25 | Mongodb Udemy course                                                                                                                                    |
 | 31/01/25 | Mongodb Udemy course                                                                                                                                    |
 | 03/02/25 | Mongodb Udemy course                                                                                                                                    |
+| 04/02/25 | Mongodb Udemy course                                                                                                                                    |
 
 
 ### Work TODO list: 
+Lombok is not reliably providing getters and setters.  Temporarily will create the getter and setters in the related classes.

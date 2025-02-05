@@ -6,6 +6,7 @@ import lombok.Data;
 
 @Builder
 @Data
+//@Document(collection = "article")
 public class Article {
 
     private Source source;

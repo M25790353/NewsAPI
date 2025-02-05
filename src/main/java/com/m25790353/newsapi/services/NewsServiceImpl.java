@@ -22,15 +22,35 @@ public class NewsServiceImpl implements NewsService {
 
 
     @Override
-    public List<Article>  geHeadlines() {
+    public String  getHeadlinesNews(TopHeadlinesRequest request) {
 
-        Response response =   newsAPIClient.getTopHeadlines();
+        Response response =   newsAPIClient.getHeadlines(request);
         Article[] articleArray = response.getArticles();
         List<Article> articles = new ArrayList<>(Arrays.asList(articleArray));
-        System.out.println("size: " +articles.size());
-        return articles;
+        System.out.println("Number of headline articles: " +articles.size());
+        for (Article article : articles) {
+            System.out.println(article);
+            //insert into the database
+        }
+        return response.toString();
 
 
 
+    }
+
+
+
+    @Override
+    public String searchNews(EverythingRequest request){
+
+        Response response =   newsAPIClient.search(request);
+        Article[] articleArray = response.getArticles();
+        List<Article> articles = new ArrayList<>(Arrays.asList(articleArray));
+        System.out.println("Number of searched articles: " +articles.size());
+        for (Article article : articles) {
+            System.out.println(article);
+            //insert into the database
+        }
+        return response.toString();
     }
 }
