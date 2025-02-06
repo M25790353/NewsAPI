@@ -101,8 +101,14 @@ Where each articles may contain the following components
 | 30/01/25 | Mongodb Udemy course                                                                                                                                    |
 | 31/01/25 | Mongodb Udemy course                                                                                                                                    |
 | 03/02/25 | Mongodb Udemy course                                                                                                                                    |
-| 04/02/25 | Mongodb Udemy course                                                                                                                                    |
+| 04/02/25 | fix query bug, refactor, prep for db                                                                                                                    |
+| 05/02/25 | integrate mongodb into app                                                                                                                              |
 
 
 ### Work TODO list: 
 Lombok is not reliably providing getters and setters.  Temporarily will create the getter and setters in the related classes.
+fix: search for News API client no working
+Exceptions for News API queries & Mongo connection
+Error handling 
+Unit tests
+e2e tests
