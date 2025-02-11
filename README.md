@@ -103,6 +103,8 @@ Where each articles may contain the following components
 | 03/02/25 | Mongodb Udemy course                                                                                                                                    |
 | 04/02/25 | fix query bug, refactor, prep for db                                                                                                                    |
 | 05/02/25 | integrate mongodb into app                                                                                                                              |
+| 06/02/25 | Docker/K8s Udemy Course                                                                                                                                 |
+| 10/02/25 | Docker/K8s Udemy Course                                                                                                                                 |
 
 
 ### Work TODO list: 
