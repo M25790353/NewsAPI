@@ -13,9 +13,12 @@ public class MongoConfig {
 
     @Bean
     MongoClient mongoClient() {
-        return MongoClients.create("mongodb://localhost:27017");
+        return MongoClients.create("mongodb://host.docker.internal:27017");
     }
-
+//     the host.docker.internal is needed when the app is in the container and the MongoDB is hosted on the machine.
+//     MongoClient mongoClient() {
+//        return MongoClients.create("mongodb://host.docker.internal:27017");
+//    }
     @Bean
     MongoOperations mongoTemplate(MongoClient mongoClient) {
         return new MongoTemplate(mongoClient, "newsarticles");

@@ -88,6 +88,18 @@ Where each articles may contain the following components
 
 #### content: The unformatted content of the article.
 
+### MongoDB
+
+### Docker
+To use Docker the jar file will need to be created and is expected to be named NewsAPI-0.0.1-SNAPSHOT.jar. To create 
+the image use the command "docker build -t newsapi_image:latest ." at the root of the project folder.
+To run the container the MongoDB needs to first be started. Use the command "docker run newsapi_image:latest 
+-p 8080:8080 --name newsapi". 
+
+### Docker Compose 
+
+
+### Kubernetes
 
 ### Notes - Summary of progress on project
 
