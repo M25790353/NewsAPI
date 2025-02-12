@@ -117,6 +117,9 @@ To run the container the MongoDB needs to first be started. Use the command "doc
 | 05/02/25 | integrate mongodb into app                                                                                                                              |
 | 06/02/25 | Docker/K8s Udemy Course                                                                                                                                 |
 | 10/02/25 | Docker/K8s Udemy Course                                                                                                                                 |
+| 11/02/25 | Docker/K8s Udemy Course                                                                                                                                 |
+| 12/02/25 | Dockerfile for app                                                                                                                                      |
+| 13/02/25 |                                                                                                                                                         |
 
 
 ### Work TODO list: 
