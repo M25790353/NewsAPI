@@ -34,7 +34,11 @@ public class NewsServiceImpl implements NewsService {
         System.out.println("Number of headline articles to be added to the database: " +articles.size());
         for (Article article : articles) {
             //insert into the database
+            System.out.println("Article title: " +article.getTitle());
+
             mongoOperations.insert(article, "article");
+            System.out.println("Article title: " +article.getTitle());
+
         }
         return response.toString();
 
