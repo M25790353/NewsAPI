@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-deployment
+spec:
+  selector:
+    matchLabels:
+      app: news-api-pod
+  template:
+    metadata:
+      labels:
+        app: news-api-pod
+    spec:
+      containers:
+        - name: news-api-container
+          image: m2345678/news-api

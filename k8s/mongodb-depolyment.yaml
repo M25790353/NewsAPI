@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongodb-deployment
+spec:
+  selector:
+    matchLabels:
+      app: mongodb-pod
+  template:
+    metadata:
+      labels:
+        app: mongodb-pod
+    spec:
+      containers:
+        - name: mongo-container
+          image: mongo
+          args: [--dbpath, /data/db]
+          volumeMounts:
+            - name: mongo-data-dir
+              mountPath: /data/db
+      volumes:
+      - name: mongo-volume
+        persistentVolumeClaim:
+            claimName: mongo-pcv
