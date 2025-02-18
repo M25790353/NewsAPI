@@ -121,7 +121,8 @@ To run the container the MongoDB needs to first be started. Use the command "doc
 | 12/02/25 | Dockerfile for app                                                                                                                                      |
 | 13/02/25 | Install K8s locally, K8s files                                                                                                                          |
 | 14/02/25 | K8s files                                                                                                                                               |
-| 17/02/25 | K8s bug, Docker Swarm                                                                                                                                   |
+| 17/02/25 | K8s mongo connection bug, read-up on Docker Swarm                                                                                                       |
+| 17/02/25 | Docker Swarm                                                                                                                                            |
 
 
 ### Work TODO list: 

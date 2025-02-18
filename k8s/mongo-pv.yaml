@@ -8,6 +8,7 @@ spec:
   capacity:
     storage: 1Gi
   volumeMode: Filesystem
+  storageClassName: standard
   hostPath:
     path: /data
     type: DirectoryOrCreate

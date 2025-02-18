@@ -16,7 +16,7 @@ spec:
           image: mongo
           args: [--dbpath, /data/db]
           volumeMounts:
-            - name: mongo-data-dir
+            - name: mongo-volume
               mountPath: /data/db
       volumes:
       - name: mongo-volume
