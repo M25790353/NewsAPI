@@ -122,13 +122,37 @@ To run the container the MongoDB needs to first be started. Use the command "doc
 | 13/02/25 | Install K8s locally, K8s files                                                                                                                          |
 | 14/02/25 | K8s files                                                                                                                                               |
 | 17/02/25 | K8s mongo connection bug, read-up on Docker Swarm                                                                                                       |
-| 17/02/25 | Docker Swarm                                                                                                                                            |
+| 17/02/25 | continue with read-up on Docker Swarm, work on todo list                                                                                                |
+| 17/02/25 | work on todo list, read-up on Ansible                                                                                                                   |
 
 
 ### Work TODO list: 
-Lombok is not reliably providing getters and setters.  Temporarily will create the getter and setters in the related classes.
-fix: search for News API client no working
-Exceptions for News API queries & Mongo connection
-Error handling 
-Unit tests
-e2e tests
+Lombok is not reliably providing getters and setters.  
+Temporarily will create the getter and setters in the related classes.    
+fix: search for News API client no working <br/>     
+Exceptions for News API queries & Mongo  <br/>     
+Error handling <br/>     
+Unit tests <br/>     
+e2e tests <br/>
+Incorporate use of environment variables <br/>
+Dockerfile <br/>
+&emsp; multistage build <br/>
+&emsp; mongodb for  <br/>
+Docker Compose <br/>
+&emsp; version for development <br/>
+&emsp; version of production <br/>
+
+VSCode  <br/>
+Docker Swarm <br/>
+GoLang <br/>
+Jenkins Pipeline <br/>
+Java/Spring <br/>
+Bitbucket <br/>
+Ansible <br/>
+Maven <br/>
+&emsp; refactor to have version numbers in properties block
+App
+Frontend
+&emsp; web page to request newsfeed
+&emsp; react frontend
+    
