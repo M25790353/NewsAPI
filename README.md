@@ -123,10 +123,13 @@ To run the container the MongoDB needs to first be started. Use the command "doc
 | 14/02/25 | K8s files                                                                                                                                               |
 | 17/02/25 | K8s mongo connection bug, read-up on Docker Swarm                                                                                                       |
 | 17/02/25 | Continue with read-up on Docker Swarm & Ansible                                                                                                         |
-| 18/02/25 | Refactor in version numbers into Maven, Study Go                                                                                                        |
-| 19/02/25 | Study Go                                                                                                                                                |
-| 20/02/25 | Study Go                                                                                                                                                |
-| 21/02/25 | Study Go                                                                                                                                                |
+| 18/02/25 | Refactor in version numbers into Maven                                                                                                                  |
+| 19/02/25 | Go Udemy course                                                                                                                                         |
+| 20/02/25 | Go Udemy course                                                                                                                                                |
+| 21/02/25 | Go Udemy course                                                                                                                                                 |
+| 21/02/25 | Go Udemy course                                                                                                                                                 |
+| 24/02/25 | Go Udemy course                                                                                                                                                |
+| 25/02/25 | Go Udemy course                                                                                                                                                 |
 
 
 ### Work TODO list: 
