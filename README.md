@@ -127,7 +127,6 @@ To run the container the MongoDB needs to first be started. Use the command "doc
 | 19/02/25 | Go Udemy course                                                                                                                                         |
 | 20/02/25 | Go Udemy course                                                                                                                                                |
 | 21/02/25 | Go Udemy course                                                                                                                                                 |
-| 21/02/25 | Go Udemy course                                                                                                                                                 |
 | 24/02/25 | Go Udemy course                                                                                                                                                |
 | 25/02/25 | Go Udemy course                                                                                                                                                 |
 
