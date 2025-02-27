@@ -129,7 +129,8 @@ To run the container the MongoDB needs to first be started. Use the command "doc
 | 21/02/25 | Go Udemy course                                                                                                                                                 |
 | 24/02/25 | Go Udemy course                                                                                                                                                |
 | 25/02/25 | Go Udemy course                                                                                                                                                 |
-
+| 26/02/25 | Go Udemy course                                                                                                                                                 |
+| 27/02/25 | Go Udemy course                                                                                                                                                 |
 
 ### Work TODO List: 
 * Lombok is not reliably providing getters and setters.  
