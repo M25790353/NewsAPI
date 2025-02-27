@@ -131,7 +131,7 @@ To run the container the MongoDB needs to first be started. Use the command "doc
 | 25/02/25 | Go Udemy course                                                                                                                                                 |
 
 
-### Work TODO list: 
+### Work TODO List: 
 * Lombok is not reliably providing getters and setters.  
 Temporarily will create the getter and setters in the related classes.    
 fix: search for News API client no working <br/>     
