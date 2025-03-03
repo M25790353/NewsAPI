@@ -125,12 +125,14 @@ To run the container the MongoDB needs to first be started. Use the command "doc
 | 17/02/25 | Continue with read-up on Docker Swarm & Ansible                                                                                                         |
 | 18/02/25 | Refactor in version numbers into Maven                                                                                                                  |
 | 19/02/25 | Go Udemy course                                                                                                                                         |
-| 20/02/25 | Go Udemy course                                                                                                                                                |
-| 21/02/25 | Go Udemy course                                                                                                                                                 |
-| 24/02/25 | Go Udemy course                                                                                                                                                |
-| 25/02/25 | Go Udemy course                                                                                                                                                 |
-| 26/02/25 | Go Udemy course                                                                                                                                                 |
-| 27/02/25 | Go Udemy course                                                                                                                                                 |
+| 20/02/25 | Go Udemy course                                                                                                                                         |
+| 21/02/25 | Go Udemy course                                                                                                                                         |
+| 24/02/25 | Go Udemy course                                                                                                                                         |
+| 25/02/25 | Go Udemy course                                                                                                                                         |
+| 26/02/25 | Go Udemy course                                                                                                                                         |
+| 27/02/25 | Go Udemy course                                                                                                                                         |
+| 28/02/25 | Go Udemy course/VS Code/Jenkins                                                                                                                         |
+| 03/03/25 |                                                                                                                                          |
 
 ### Work TODO List: 
 * Lombok is not reliably providing getters and setters.  
@@ -162,4 +164,5 @@ Docker * Compose <br/>
     * Frontend
 &emsp; * web page to request newsfeed
 &emsp; * react frontend
+    * 
     
