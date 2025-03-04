@@ -1,11 +1,10 @@
-/* Requires the Docker Pipeline plugin */
+/* Jenkinsfil (Declarative Pipeline) */
 pipeline {
-    agent { docker { image 'golang:1.24.0-alpine3.21' } }
+    agent any
     stages {
-        stage('build') {
+        stage('Stage 1') {
             steps {
-                echo 'running build'
-                sh 'go version'
+                echo 'Hello world!'
             }
         }
     }
