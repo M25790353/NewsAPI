@@ -13,7 +13,13 @@ pipeline {
         stage('Build') {
             steps {
                 echo '!!!!! Building..'
-                sh 'mvn -B'
+                git url:'https://github.com/M25790353/NewsAPI.git'
+                withMaven (
+                    maven: 'my-maven'
+                ){
+
+                    sh "mvn clean verify"
+                }
             
             }
         }
