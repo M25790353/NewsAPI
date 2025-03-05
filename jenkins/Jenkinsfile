@@ -4,10 +4,16 @@ pipeline {
     agent any
 
     stages {
+        stage('Code Checkout') {
+            steps {
+                echo 'Checkout..'
+                git branch: 'master', url:'https://github.com/M25790353/NewsAPI.git'
+            }
+        }
         stage('Build') {
             steps {
                 echo 'Building..'
-                sh 'mvn -B -DSkipTests clean package'
+            
             }
         }
         stage('Test') {
