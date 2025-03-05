@@ -1,7 +1,9 @@
 // CI  for when a commit to master
 //  
 pipeline {
-    agent any
+    agent {
+        docker {image: 'maven'}
+    }
 
     stages {
         stage('Code Checkout') {
@@ -13,9 +15,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo '!!!!! Building..'
-                sh 'whoami'
-                sh 'docker --version'
-                sh 'docker build -t try1build'
+                sh 'mvn -B'
             
             }
         }
