@@ -1,9 +1,7 @@
 // CI  for when a commit to master
 //  
 pipeline {
-    agent {
-      any
-    }
+    agent any
 
     stages {
         stage('Code Checkout') {
