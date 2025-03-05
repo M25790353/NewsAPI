@@ -134,6 +134,7 @@ To run the container the MongoDB needs to first be started. Use the command "doc
 | 28/02/25 | Go Udemy course/VS Code/Jenkins                                                                                                                         |
 | 03/03/25 | Jenkins/Office Admin   
 | 04/03/25 | Jenkins/ 
+| 05/03/25 | Jenkins/ Unit tests
 
 
 ### Work TODO List: 
@@ -157,6 +158,8 @@ Docker * Compose <br/>
 * Docker Swarm <br/>
 * GoLang <br/>
 * Jenkins Pipeline <br/>
+&emsp; * study documnetation<br/>
+&emsp; * Jenkinsfile for build stage <br/>
 * Java/Spring <br/>
 * Bitbucket <br/>
 * Ansible <br/>
