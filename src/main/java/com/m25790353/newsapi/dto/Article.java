@@ -3,7 +3,6 @@ package com.m25790353.newsapi.dto;
 
 import lombok.Builder;
 import lombok.Data;
-import lombok.Generated;
 
 @Builder
 @Data

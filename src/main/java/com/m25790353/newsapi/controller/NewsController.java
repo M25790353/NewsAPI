@@ -1,17 +1,13 @@
 package com.m25790353.newsapi.controller;
 
 
-import com.m25790353.newsapi.dto.Article;
 import com.m25790353.newsapi.dto.EverythingRequest;
 import com.m25790353.newsapi.dto.TopHeadlinesRequest;
 import com.m25790353.newsapi.services.NewsService;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
 import java.util.logging.Logger;
 
 /**
