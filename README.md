@@ -132,9 +132,11 @@ To run the container the MongoDB needs to first be started. Use the command "doc
 | 26/02/25 | Go Udemy course                                                                                                                                         |
 | 27/02/25 | Go Udemy course                                                                                                                                         |
 | 28/02/25 | Go Udemy course/VS Code/Jenkins                                                                                                                         |
-| 03/03/25 | Jenkins/Office Admin   
-| 04/03/25 | Jenkins/ 
-| 05/03/25 | Jenkins/ Maven
+| 03/03/25 | Study Jenkins/Office Admin   
+| 04/03/25 | Study Jenkins/ 
+| 05/03/25 | Study Jenkins/ Maven
+| 06/03/25 | Study Maven/Git/Spring
+| 07/03/25 | Implement SSH, GPG, Study Spring
 
 
 ### Work TODO List: 
