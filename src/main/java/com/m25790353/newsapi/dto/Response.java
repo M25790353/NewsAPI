@@ -12,7 +12,6 @@ public class Response {
     private Article[] articles;
 
 
-    //issue with Lombock?
 
     public Article[] getArticles() {
         return articles;
