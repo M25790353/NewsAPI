@@ -26,7 +26,7 @@ public class NewsServiceImpl implements NewsService {
 
 
     @Override
-    public String  getHeadlinesNews(TopHeadlinesRequest request) {
+    public String  getHeadlineNews(TopHeadlinesRequest request) {
 
         Response response =   newsAPIClient.getHeadlines(request);
         Article[] articleArray = response.getArticles();

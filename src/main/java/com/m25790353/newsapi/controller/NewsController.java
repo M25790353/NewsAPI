@@ -28,7 +28,7 @@ public class NewsController {
 
     @GetMapping("/headlines")
     public String getHeadlineNews(@RequestBody TopHeadlinesRequest request) {
-     return   newsService.getHeadlinesNews(request);
+     return   newsService.getHeadlineNews(request);
 
     }
 
