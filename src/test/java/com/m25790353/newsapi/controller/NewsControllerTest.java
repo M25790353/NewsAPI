@@ -2,6 +2,7 @@ package com.m25790353.newsapi.controller;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.ArgumentCaptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.http.MediaType;
@@ -16,7 +17,9 @@ import com.m25790353.newsapi.dto.TopHeadlinesRequest;
 import com.m25790353.newsapi.services.NewsService;
 
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.Matchers.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -69,6 +72,11 @@ public class NewsControllerTest {
                                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                                 .andExpect(jsonPath("$.articles", hasSize(2)))
                                 .andExpect(jsonPath("$.articles[0].description", is(article1.getDescription())));
+
+                ArgumentCaptor<TopHeadlinesRequest> headlineRequestCaptor = ArgumentCaptor
+                                .forClass(TopHeadlinesRequest.class);
+                verify(newsService).getHeadlineNews(headlineRequestCaptor.capture());
+                assertThat(topHeadlinesRequest).isEqualTo(headlineRequestCaptor.getValue());
         }
 
         @Test
@@ -89,5 +97,9 @@ public class NewsControllerTest {
                                 .andExpect(jsonPath("$.articles", hasSize(2)))
                                 .andExpect(jsonPath("$.articles[0].description", is(article1.getDescription())));
 
+                ArgumentCaptor<EverythingRequest> everythingRequestCaptor = ArgumentCaptor
+                                .forClass(EverythingRequest.class);
+                verify(newsService).searchNews(everythingRequestCaptor.capture());
+                assertThat(everythingRequest).isEqualTo(everythingRequestCaptor.getValue());
         }
 }
