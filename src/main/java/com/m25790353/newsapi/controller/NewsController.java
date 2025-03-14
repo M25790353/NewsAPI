@@ -21,16 +21,19 @@ import java.util.logging.Logger;
 @RestController
 public class NewsController {
 
+    public static final String HEADLINES = "/headlines";
+    public static final String SEARCH = "/search";
+
     private final NewsService newsService;
     public static final Logger log = Logger.getLogger(NewsController.class.getName());
 
-    @GetMapping("/headlines")
+    @GetMapping(HEADLINES)
     public String getHeadlineNews(@RequestBody TopHeadlinesRequest request) {
         return newsService.getHeadlineNews(request);
 
     }
 
-    @GetMapping("/search")
+    @GetMapping(SEARCH)
     public String searchNews(@RequestBody EverythingRequest request) {
         return newsService.searchNews(request);
 

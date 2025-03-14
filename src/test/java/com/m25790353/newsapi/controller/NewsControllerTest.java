@@ -64,7 +64,7 @@ public class NewsControllerTest {
                 when(newsService.getHeadlineNews(any(TopHeadlinesRequest.class)))
                                 .thenReturn(objectMapper.writeValueAsString(response));
 
-                mockMvc.perform(get("/headlines")
+                mockMvc.perform(get(NewsController.HEADLINES)
                                 .accept(MediaType.APPLICATION_JSON)
                                 .contentType(MediaType.APPLICATION_JSON)
                                 .content(objectMapper.writeValueAsString(topHeadlinesRequest)))
@@ -88,7 +88,7 @@ public class NewsControllerTest {
                 when(newsService.searchNews(any(EverythingRequest.class)))
                                 .thenReturn(objectMapper.writeValueAsString(response));
 
-                mockMvc.perform(get("/search")
+                mockMvc.perform(get(NewsController.SEARCH)
                                 .accept(MediaType.APPLICATION_JSON)
                                 .contentType(MediaType.APPLICATION_JSON)
                                 .content(objectMapper.writeValueAsString(everythingRequest)))
