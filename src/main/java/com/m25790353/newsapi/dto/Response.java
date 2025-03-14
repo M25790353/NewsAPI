@@ -11,8 +11,6 @@ public class Response {
     private int totalResults;
     private Article[] articles;
 
-
-
     public Article[] getArticles() {
         return articles;
     }

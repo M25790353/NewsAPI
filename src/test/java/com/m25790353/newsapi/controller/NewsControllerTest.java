@@ -25,75 +25,69 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 
-
 @WebMvcTest(NewsController.class)
 public class NewsControllerTest {
 
-    @Autowired
-    private MockMvc mockMvc;
+        @Autowired
+        private MockMvc mockMvc;
 
-    @Autowired
-    ObjectMapper objectMapper;
+        @Autowired
+        ObjectMapper objectMapper;
 
+        @MockitoBean
+        NewsService newsService;
 
-@MockitoBean
-NewsService newsService;
+        Response response;
+        Article article1;
+        Article article2;
+        Article[] articles;
 
-Response response;
-Article article1;
-Article article2;
-Article[] articles;
+        @BeforeEach
+        void before() {
+                article1 = Article.builder().description("First article").build();
+                article2 = Article.builder().description("Second article").build();
+                articles = new Article[] { article1, article2 };
 
-@BeforeEach
-void before(){
-     article1 =   Article.builder().description("First article").build();
-     article2 =   Article.builder().description("Second article").build();
-    articles = new Article[] {article1, article2};
+                response = Response.builder().articles(articles).build();
 
-          
-     response = Response.builder().articles(articles).build();
+        }
 
-}
+        @Test
+        void testGetHeadlineNews() throws Exception {
 
-    @Test
-    void testGetHeadlineNews() throws Exception  {
+                TopHeadlinesRequest topHeadlinesRequest = TopHeadlinesRequest.builder()
+                                .build();
 
-       
-        TopHeadlinesRequest topHeadlinesRequest = 
-           TopHeadlinesRequest.builder()
-           .build();
+                when(newsService.getHeadlineNews(any(TopHeadlinesRequest.class)))
+                                .thenReturn(objectMapper.writeValueAsString(response));
 
-       
+                mockMvc.perform(get("/headlines")
+                                .accept(MediaType.APPLICATION_JSON)
+                                .contentType(MediaType.APPLICATION_JSON)
+                                .content(objectMapper.writeValueAsString(topHeadlinesRequest)))
+                                .andExpect(status().isOk())
+                                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+                                .andExpect(jsonPath("$.articles", hasSize(2)))
+                                .andExpect(jsonPath("$.articles[0].description", is(article1.getDescription())));
+        }
 
-        when(newsService.getHeadlineNews(any(TopHeadlinesRequest.class))).thenReturn(objectMapper.writeValueAsString(response));
+        @Test
+        void testSearchNews() throws Exception {
 
-        mockMvc.perform(get("/headlines")
-        .accept(MediaType.APPLICATION_JSON)
-            .contentType(MediaType.APPLICATION_JSON)
-            .content(objectMapper.writeValueAsString(topHeadlinesRequest)))
-        .andExpect(status().isOk())
-        .andExpect(content().contentType(MediaType.APPLICATION_JSON))
-        .andExpect(jsonPath("$.articles", hasSize(2)))
-        .andExpect(jsonPath("$.articles[0].description",is(article1.getDescription())));
-    }
-    
-    @Test
-    void testSearchNews() throws Exception  {
-    
-        EverythingRequest everythingRequest = 
-        EverythingRequest.builder()
-        .build();
+                EverythingRequest everythingRequest = EverythingRequest.builder()
+                                .build();
 
-        when(newsService.searchNews(any(EverythingRequest.class))).thenReturn(objectMapper.writeValueAsString(response));
+                when(newsService.searchNews(any(EverythingRequest.class)))
+                                .thenReturn(objectMapper.writeValueAsString(response));
 
-        mockMvc.perform(get("/search")
-        .accept(MediaType.APPLICATION_JSON)
-            .contentType(MediaType.APPLICATION_JSON)
-            .content(objectMapper.writeValueAsString(everythingRequest)))
-        .andExpect(status().isOk())
-        .andExpect(content().contentType(MediaType.APPLICATION_JSON))
-        .andExpect(jsonPath("$.articles", hasSize(2)))
-        .andExpect(jsonPath("$.articles[0].description",is(article1.getDescription())));
-    
-    }
+                mockMvc.perform(get("/search")
+                                .accept(MediaType.APPLICATION_JSON)
+                                .contentType(MediaType.APPLICATION_JSON)
+                                .content(objectMapper.writeValueAsString(everythingRequest)))
+                                .andExpect(status().isOk())
+                                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+                                .andExpect(jsonPath("$.articles", hasSize(2)))
+                                .andExpect(jsonPath("$.articles[0].description", is(article1.getDescription())));
+
+        }
 }

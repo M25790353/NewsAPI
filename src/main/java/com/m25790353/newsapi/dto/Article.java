@@ -1,6 +1,5 @@
 package com.m25790353.newsapi.dto;
 
-
 import lombok.Builder;
 import lombok.Data;
 
@@ -16,6 +15,5 @@ public class Article {
     private String urtToImage;
     private String publishedAt;
     private String content;
-
 
 }
