@@ -137,7 +137,17 @@ To run the container the MongoDB needs to first be started. Use the command "doc
 | 05/03/25 | Study Jenkins/ Maven
 | 06/03/25 | Study Maven/Git/Spring
 | 07/03/25 | Implement SSH, GPG, Study Spring 
-| 10/03/25 | Review Bitbucket & GitLab Tools and CI/CD workflow, Study Spring 
+| 10/03/25 | Study Spring 
+| 11/03/25 | Study Spring 
+| 12/03/25 | Study Spring 
+| 13/03/25 | Added unit test for controller/refactoring 
+| 14/03/25 | Study Spring 
+| 17/03/25 | Study Spring 
+
+
+
+
+
 
 
 
