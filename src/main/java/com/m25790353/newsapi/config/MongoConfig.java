@@ -10,10 +10,10 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 @Configuration
 public class MongoConfig {
 
-    @Bean
-    MongoClient mongoClient() {
-        return MongoClients.create("mongodb://mongodb-service.default:27017");
-    }
+ //   @Bean
+ //   MongoClient mongoClient() {
+ //       return MongoClients.create("mongodb://mongodb-service.default:27017");
+ //   }
     // uses DNS in k8S.
     // MongoClient mongoClient() {return
     // MongoClients.create("mongodb://mongodb-service.default:27017");}
@@ -23,8 +23,8 @@ public class MongoConfig {
     // MongoClient mongoClient() {
     // return MongoClients.create("mongodb://host.docker.internal:27017");
     // }
-    @Bean
-    MongoOperations mongoTemplate(MongoClient mongoClient) {
-        return new MongoTemplate(mongoClient, "newsarticles");
-    }
+  //  @Bean
+  //  MongoOperations mongoTemplate(MongoClient mongoClient) {
+  //      return new MongoTemplate(mongoClient, "newsarticles");
+  //  }
 }
