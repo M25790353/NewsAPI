@@ -1,6 +1,6 @@
 package com.m25790353.newsapi.dto;
 
-public enum Category {
+public enum CategoryDTO {
 
       BUSINESS("business"),
       ENTERTAINMENT("entertainment"),
@@ -11,7 +11,7 @@ public enum Category {
 
       private final String value;
 
-      Category(String value) {
+      CategoryDTO(String value) {
             this.value = value;
       }
 }

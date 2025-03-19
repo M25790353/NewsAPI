@@ -1,8 +1,9 @@
 package com.m25790353.newsapi.newsclient;
 
-import com.m25790353.newsapi.dto.EverythingRequest;
-import com.m25790353.newsapi.dto.Response;
-import com.m25790353.newsapi.dto.TopHeadlinesRequest;
+import com.m25790353.newsapi.dto.EverythingRequestDTO;
+import com.m25790353.newsapi.dto.ResponseDTO;
+import com.m25790353.newsapi.dto.TopHeadlinesRequestDTO;
+import com.m25790353.newsapi.dto.TopHeadlinesRequestDTO;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClient;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -52,11 +53,11 @@ public class NewsAPIClient {
                 this.restClient = RestClient.create();
         }
 
-        public Response getHeadlines(TopHeadlinesRequest request) {
+        public ResponseDTO getHeadlines(TopHeadlinesRequestDTO request) {
 
                 System.out.println("before getHeadlines");
 
-                Response response = restClient.get()
+                ResponseDTO response = restClient.get()
                                 .uri(UriComponentsBuilder.fromUriString(BASE_URL)
                                                 .path(HEADLINES)
                                                 .queryParam(API_KEY, NEWS_ORG_KEY)
@@ -73,7 +74,7 @@ public class NewsAPIClient {
                                                 .toUri())
                                 .accept(APPLICATION_JSON)
                                 .retrieve()
-                                .body(Response.class);
+                                .body(ResponseDTO.class);
 
                 System.out.println("after getHeadlines");
 
@@ -81,13 +82,13 @@ public class NewsAPIClient {
 
         }
 
-        public Response search(EverythingRequest request) {
+        public ResponseDTO search(EverythingRequestDTO request) {
 
                 System.out.println("before search");
                 // GET
                 // https://newsapi.org/v2/everything?domains=techcrunch.com,thenextweb.com&apiKey=API_KEY
 
-                Response response = restClient.get()
+                ResponseDTO response = restClient.get()
                                 .uri(UriComponentsBuilder.fromUriString(BASE_URL)
                                                 .path(SEARCH)
                                                 .queryParam(API_KEY, NEWS_ORG_KEY)
@@ -111,7 +112,7 @@ public class NewsAPIClient {
                                                 .toUri())
                                 .accept(APPLICATION_JSON)
                                 .retrieve()
-                                .body(Response.class);
+                                .body(ResponseDTO.class);
 
                 System.out.println("after search");
 

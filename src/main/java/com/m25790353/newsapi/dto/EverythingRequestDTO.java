@@ -10,7 +10,7 @@ import lombok.Data;
 
 @Data
 @Builder
-public class EverythingRequest {
+public class EverythingRequestDTO {
     private String query;
     private String sources;
     private String domains;

@@ -5,13 +5,13 @@ import lombok.Data;
 
 @Builder
 @Data
-public class Response {
+public class ResponseDTO {
 
     private String status;
     private int totalResults;
-    private Article[] articles;
+    private ArticleDTO[] articles;
 
-    public Article[] getArticles() {
+    public ArticleDTO[] getArticles() {
         return articles;
     }
 

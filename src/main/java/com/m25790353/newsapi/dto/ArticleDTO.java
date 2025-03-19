@@ -5,9 +5,9 @@ import lombok.Data;
 
 @Builder
 @Data
-public class Article {
+public class ArticleDTO {
 
-    private Source source;
+    private SourceDTO source;
     private String author;
     private String title;
     private String description;

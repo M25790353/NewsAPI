@@ -10,10 +10,10 @@ import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.m25790353.newsapi.dto.Article;
-import com.m25790353.newsapi.dto.EverythingRequest;
-import com.m25790353.newsapi.dto.Response;
-import com.m25790353.newsapi.dto.TopHeadlinesRequest;
+import com.m25790353.newsapi.dto.ArticleDTO;
+import com.m25790353.newsapi.dto.EverythingRequestDTO;
+import com.m25790353.newsapi.dto.ResponseDTO;
+import com.m25790353.newsapi.dto.TopHeadlinesRequestDTO;
 import com.m25790353.newsapi.services.NewsService;
 
 import static org.mockito.ArgumentMatchers.any;
@@ -40,28 +40,28 @@ public class NewsControllerTest {
         @MockitoBean
         NewsService newsService;
 
-        Response response;
-        Article article1;
-        Article article2;
-        Article[] articles;
+        ResponseDTO response;
+        ArticleDTO article1;
+        ArticleDTO article2;
+        ArticleDTO[] articles;
 
         @BeforeEach
         void before() {
-                article1 = Article.builder().description("First article").build();
-                article2 = Article.builder().description("Second article").build();
-                articles = new Article[] { article1, article2 };
+                article1 = ArticleDTO.builder().description("First article").build();
+                article2 = ArticleDTO.builder().description("Second article").build();
+                articles = new ArticleDTO[] { article1, article2 };
 
-                response = Response.builder().articles(articles).build();
+                response = ResponseDTO.builder().articles(articles).build();
 
         }
 
         @Test
         void testGetHeadlineNews() throws Exception {
 
-                TopHeadlinesRequest topHeadlinesRequest = TopHeadlinesRequest.builder()
+                TopHeadlinesRequestDTO topHeadlinesRequest = TopHeadlinesRequestDTO.builder()
                                 .build();
 
-                when(newsService.getHeadlineNews(any(TopHeadlinesRequest.class)))
+                when(newsService.getHeadlineNews(any(TopHeadlinesRequestDTO.class)))
                                 .thenReturn(objectMapper.writeValueAsString(response));
 
                 mockMvc.perform(get(NewsController.HEADLINES)
@@ -73,8 +73,8 @@ public class NewsControllerTest {
                                 .andExpect(jsonPath("$.articles", hasSize(2)))
                                 .andExpect(jsonPath("$.articles[0].description", is(article1.getDescription())));
 
-                ArgumentCaptor<TopHeadlinesRequest> headlineRequestCaptor = ArgumentCaptor
-                                .forClass(TopHeadlinesRequest.class);
+                ArgumentCaptor<TopHeadlinesRequestDTO> headlineRequestCaptor = ArgumentCaptor
+                                .forClass(TopHeadlinesRequestDTO.class);
                 verify(newsService).getHeadlineNews(headlineRequestCaptor.capture());
                 assertThat(topHeadlinesRequest).isEqualTo(headlineRequestCaptor.getValue());
         }
@@ -82,10 +82,10 @@ public class NewsControllerTest {
         @Test
         void testSearchNews() throws Exception {
 
-                EverythingRequest everythingRequest = EverythingRequest.builder()
+                EverythingRequestDTO everythingRequest = EverythingRequestDTO.builder()
                                 .build();
 
-                when(newsService.searchNews(any(EverythingRequest.class)))
+                when(newsService.searchNews(any(EverythingRequestDTO.class)))
                                 .thenReturn(objectMapper.writeValueAsString(response));
 
                 mockMvc.perform(get(NewsController.SEARCH)
@@ -97,8 +97,8 @@ public class NewsControllerTest {
                                 .andExpect(jsonPath("$.articles", hasSize(2)))
                                 .andExpect(jsonPath("$.articles[0].description", is(article1.getDescription())));
 
-                ArgumentCaptor<EverythingRequest> everythingRequestCaptor = ArgumentCaptor
-                                .forClass(EverythingRequest.class);
+                ArgumentCaptor<EverythingRequestDTO> everythingRequestCaptor = ArgumentCaptor
+                                .forClass(EverythingRequestDTO.class);
                 verify(newsService).searchNews(everythingRequestCaptor.capture());
                 assertThat(everythingRequest).isEqualTo(everythingRequestCaptor.getValue());
         }

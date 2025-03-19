@@ -1,7 +1,7 @@
 package com.m25790353.newsapi.controller;
 
-import com.m25790353.newsapi.dto.EverythingRequest;
-import com.m25790353.newsapi.dto.TopHeadlinesRequest;
+import com.m25790353.newsapi.dto.EverythingRequestDTO;
+import com.m25790353.newsapi.dto.TopHeadlinesRequestDTO;
 import com.m25790353.newsapi.services.NewsService;
 
 import lombok.AllArgsConstructor;
@@ -28,13 +28,13 @@ public class NewsController {
     public static final Logger log = Logger.getLogger(NewsController.class.getName());
 
     @GetMapping(HEADLINES)
-    public String getHeadlineNews(@RequestBody TopHeadlinesRequest request) {
+    public String getHeadlineNews(@RequestBody TopHeadlinesRequestDTO request) {
         return newsService.getHeadlineNews(request);
 
     }
 
     @GetMapping(SEARCH)
-    public String searchNews(@RequestBody EverythingRequest request) {
+    public String searchNews(@RequestBody EverythingRequestDTO request) {
         return newsService.searchNews(request);
 
     }

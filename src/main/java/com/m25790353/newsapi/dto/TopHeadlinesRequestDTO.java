@@ -6,7 +6,7 @@ import lombok.Data;
 
 @Data
 @Builder
-public class TopHeadlinesRequest {
+public class TopHeadlinesRequestDTO {
     private String category;
     private String sources;
     private String query;
