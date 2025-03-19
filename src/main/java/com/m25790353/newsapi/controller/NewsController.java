@@ -1,6 +1,7 @@
 package com.m25790353.newsapi.controller;
 
 import com.m25790353.newsapi.dto.EverythingRequestDTO;
+import com.m25790353.newsapi.dto.ResponseDTO;
 import com.m25790353.newsapi.dto.TopHeadlinesRequestDTO;
 import com.m25790353.newsapi.services.NewsService;
 
@@ -28,15 +29,15 @@ public class NewsController {
     public static final Logger log = Logger.getLogger(NewsController.class.getName());
 
     @GetMapping(HEADLINES)
-    public String getHeadlineNews(@RequestBody TopHeadlinesRequestDTO request) {
-        return newsService.getHeadlineNews(request);
-
+    public ResponseDTO getHeadlineNews(@RequestBody TopHeadlinesRequestDTO request) {
+        // return newsService.getHeadlineNews(request);
+        return null;
     }
 
     @GetMapping(SEARCH)
-    public String searchNews(@RequestBody EverythingRequestDTO request) {
-        return newsService.searchNews(request);
-
+    public ResponseDTO searchNews(@RequestBody EverythingRequestDTO request) {
+        // return newsService.searchNews(request);
+        return null;
     }
 
 }
